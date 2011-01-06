@@ -2,7 +2,7 @@ require 'parse_tree'
 require 'ruby2ruby'
 require 'parse_tree_extensions'
 
-module BandMarshal
+module FieldMarshal
   def self.marshal(thing = nil, name = nil, &blk)
     thing ||= blk
     hash    = marshal_ thing
@@ -74,6 +74,6 @@ end
 
 class Proc
   def marshal
-    BandMarshal.marshal self
+    FieldMarshal.marshal self
   end
 end
