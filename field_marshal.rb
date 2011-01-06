@@ -29,7 +29,8 @@ module FieldMarshal
     already_existing_var_name = already_marshalled.invert[thing]
 
     if already_existing_var_name && name != already_existing_var_name
-      assigns_hash[name] = already_existing_var_name
+      assigns_hash[name]       = already_existing_var_name
+      already_marshalled[name] = thing
     end
 
     unless already_marshalled[name] == thing
