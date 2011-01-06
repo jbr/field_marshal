@@ -43,7 +43,7 @@ module FieldMarshal
             assigns_hash.merge! marshal_(t, nil, already_marshalled)
             assigns_hash.delete nil
           end
-          "[ #{contents.join(",")} ]"
+          "[ #{contents.join ", "} ]"
 
         when Hash
           pairs = thing.map do |key, value|
