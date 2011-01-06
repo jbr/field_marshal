@@ -19,7 +19,9 @@ module FieldMarshal
       end
     end
 
-    assigns.push(name ? name : hash[nil]).join("\n")
+    return_value = name || hash.invert[hash[nil]] || hash[nil]
+
+    assigns.push(return_value).join("\n")
   end
 
   private
